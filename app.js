@@ -1,10 +1,17 @@
-let getRandomNumbers=function(start,range){
-        var arr = [];
-    while(arr.length < 7){
-        var i = Math.floor(Math.random() * 9);
-        if(arr.indexOf(i) === -1) arr.push(i);
-    }
-    console.log(arr);
+function checkUniqueness(arr) {
+        const len = arr.length;
+        for (let i = 0; i < len; i++) {
+          for (let j = 0; j < len; j++) {
+            if (i !== j && arr[i] === arr[j]) {
+              return false;
+            }
+          }
+        }
+        return true;
+      }
+    const arrOne = [1, 4, 6, 2, 1];
+    console.log("arrayone is : "+checkUniqueness(arrOne));
     
-    }
-    console.log(getRandomNumbers(0,9));
+    
+    const arrTwo = [1, 4, 6, 2, 3]
+    console.log("arrayTwo is : "+checkUniqueness(arrTwo));
